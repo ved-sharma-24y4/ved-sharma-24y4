@@ -21,9 +21,7 @@
 
 #
 
-<div align="center">
-  <img src="https://profile-readme-generator.com/assets/snake.svg" alt="Snake animation" />
-</div>
+![snake gif](https://github.com/ved-sharma-24y4/ved-sharma-24y4/blob/output/github-snake-dark.svg)
 
 
 # 📊 GitHub Stats:
