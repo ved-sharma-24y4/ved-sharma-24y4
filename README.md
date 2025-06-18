@@ -21,7 +21,9 @@
 
 #
 
-![snake gif](https://github.com/ved-sharma-24y4/ved-sharma-24y4/blob/output/github-snake-dark.svg)
+<div align="center">
+  <img src="https://github.com/ved-sharma-24y4/ved-sharma-24y4/blob/output/github-snake-dark.svg" alt="Snake animation" />
+</div>
 
 
 # 📊 GitHub Stats:
@@ -37,6 +39,9 @@
 <div align="center">
   <img src="https://raw.githubusercontent.com/ved-sharma-24y4/ved-sharma24y4/output/snake.svg" alt="Snake animation" />
 </div>
+
+
+![snake gif](https://github.com/ved-sharma-24y4/ved-sharma-24y4/blob/output/github-snake-dark.svg)
 -->
 
 
