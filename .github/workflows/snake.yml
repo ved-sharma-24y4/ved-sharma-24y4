@@ -1,0 +1,23 @@
+name: Test Snake Generation Only
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Generate Snake
+        uses: Platane/snk@v3.3.0
+        with:
+          github_user_name: ved-sharma-24y4
+          outputs: ./dist
+
+      - name: Check contents of dist
+        run: |
+          echo "Listing dist folder:"
+          ls -la dist
