@@ -3,12 +3,12 @@ name: GitHub Snake Game
 on:
   # Schedule the workflow to run daily at midnight UTC
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 */6 * * *"
 
   # Allow manual triggering of the workflow
   workflow_dispatch:
 
-  # Trigger on push to main branch
+  # Trigger the workflow on pushes to the main branch
   push:
     branches:
       - main
@@ -19,27 +19,27 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      # Checkout the repository
+      # Step 1: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Generate the snake animation
+      # Step 2: Generate the snake animations
       - name: Generate GitHub Contributions Snake Animations
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark&speed=1
-            dist/github-snake.gif?color_snake=#00FFFF&color_dots=#63ec93,#63ec93,#63ec93,#63ec93,#63ec93&speed=1
+            dist/github-snake-dark.svg?palette=github-dark&animation_duration=12&color_dots=#ffffff,#ffeb3b,#ff9800,#f44336,#e91e63
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Deploy to the output branch
+      # Step 3: Deploy the generated files to the 'output' branch
       - name: Deploy to Output Branch
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
-          commit_message: "✨ Update snake animation with cyan snake and bright green dots"
+          commit_message: "Update snake animation [skip ci]"
